@@ -1,0 +1,45 @@
+{
+  "revision_id": "34d02b72622109cc05a358381c6cd59e14fd91eb33e70e1721211ddc97035a31",
+  "name": "webpolicy",
+  "run_list": [
+    "recipe[apache::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "apache": {
+      "version": "0.3.1",
+      "identifier": "3f9cd21c5507b0da1d5700d8bde875f1f366b1b3",
+      "dotted_decimal_identifier": "17905349765171120.61393804436487656.129682031161779",
+      "cache_key": "apache-0.3.1",
+      "origin": "https://chef.automate-demo.com/organizations/automate",
+      "source_options": {
+        "chef_server": "https://chef.automate-demo.com/organizations/automate",
+        "version": "0.3.1"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+    "apache": {
+      "port": 9090,
+      "message": "Hello UOB"
+    }
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "apache",
+        "= 0.3.1"
+      ]
+    ],
+    "dependencies": {
+      "apache (0.3.1)": [
+
+      ]
+    }
+  }
+}
