@@ -4,14 +4,13 @@
 # https://docs.chef.io/policyfile.html
 
 # A name that describes what the system you're building with Chef does.
-name 'webpolicy'
+name 'proxypolicy'
 
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'recipe[apache::default]'
+run_list 'recipe[haproxy::default]'
 
 # Where to find external cookbooks:
-
 #default_source :supermarket
 #default_source :chef_repo, "../cookbooks"
 #pulls cookbooks from an Artifactory server. Requires either artifactory_api_key to be set in config.rb or
@@ -23,7 +22,5 @@ default_source :chef_server, "https://chef.automate-demo.com/organizations/autom
 
 # Specify a custom source for a single cookbook:
 # cookbook 'example_cookbook', path: '../cookbooks/example_cookbook'
-cookbook 'apache', ">= 0.3.1"
+cookbook 'haproxy', ">= 0.2.0"
 
-override['apache']['port'] = 9090
-override['apache']['message'] = "Hello UOB"
